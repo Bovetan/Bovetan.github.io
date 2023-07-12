@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            text-align: center;
+        }
+        #number {
+            font-size: 96px;
+            margin: 20px;
+        }
+        #button {
+            background-color: #043805;
+            color: white;
+            padding: 10px 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 48px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: -10px; 
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <h1 style="font-size: 3em;">Tómbola</h1>
+        <div id="number">0000</div>
+        <button id="button" onclick="generateNumber()">Número ganador</button>
+    </div>
+    <div align="center">
+        <img src="Divina_Pastora.jpg" alt="Colegio Divina Pastora" width="270">
+    </div>
+    <script>
+        var number = "0000";
+        document.getElementById("number").innerHTML = number;
+
+        function generateNumber() {
+            var number = Math.floor(Math.random() * (3010 - 1 + 1)) + 1;
+            number = number.toString().padStart(4, '0');
+            document.getElementById("number").innerHTML = number;
+        }
+    </script>
+</body>
+</html>
+
+
